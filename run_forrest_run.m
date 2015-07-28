@@ -20,5 +20,5 @@ patch_params.nbinsth      = 16;      % number of rays
 patch_params.fhs          = 0.2;     % factor determining hardness of scale quantization
 patch_params.fha          = 0.01;    % factor determining hardness of angle quantization
 patch_params.geod_th      = true;
-extract_patch_operator('data/train/shapes', 'data/test/disk', patch_params);
+extract_patch_operator('data/train/shapes', 'data/train/disk', patch_params);
 extract_patch_operator('data/test/shapes', 'data/test/disk', patch_params);
