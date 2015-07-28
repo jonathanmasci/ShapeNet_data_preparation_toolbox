@@ -1,0 +1,14 @@
+function shape_transformed = transform_shape(shape,scl,ang1,ang2,ang3);
+crd0(1,:) = shape.X'*scl;
+crd0(2,:) = shape.Y'*scl;
+crd0(3,:) = shape.Z'*scl;
+rotation1 = [cos(ang1),-sin(ang1),0; sin(ang1),cos(ang1),0; 0,0,1];
+rotation2 = [cos(ang2),0,-sin(ang2); 0,1,0; sin(ang2),0,cos(ang2)];
+rotation3 = [1,0,0;0,cos(ang3),-sin(ang3);0,sin(ang3),cos(ang3)];
+crd1 = rotation1*crd0;
+crd2 = rotation2*crd1;
+crd3 = rotation3*crd2;
+shape.X = crd3(1,:)';
+shape.Y = crd3(2,:)';
+shape.Z = crd3(3,:)';
+shape_transformed = shape;
