@@ -12,7 +12,7 @@ parfor i = 1 : length(fnames)
     % this allows a more efficient moltiplication and handling in theano
     M = sparse(cat(1, M{:}));
     
-    parsave(fullfile(dstpath, fnames(i).name), 'M');
+    parsave(fullfile(dstpath, fnames(i).name), M);
 end
 end
 
