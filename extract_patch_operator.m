@@ -1,5 +1,9 @@
 function extract_patch_operator(srcpath, dstpath, patch_params)
 
+if ~exist(dstpath, 'dir')
+    mkdir(dstpath);
+end
+
 fnames = dir(fullfile(srcpath, '*.mat'));
 parfor i = 1 : length(fnames)
     if exist(fullfile(dstpath, fnames(i).name), 'file')
