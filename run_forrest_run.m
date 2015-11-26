@@ -17,7 +17,7 @@ patch_params.rad          = 0.01;    % disk radius
 patch_params.flag_dist    = 'fmm';   % possible choices: 'fmm' or 'min'
 patch_params.nbinsr       = 5;       % number of rings
 patch_params.nbinsth      = 16;      % number of rays
-patch_params.fhs          = 0.2;     % factor determining hardness of scale quantization
+patch_params.fhs          = 2.0;     % factor determining hardness of scale quantization
 patch_params.fha          = 0.01;    % factor determining hardness of angle quantization
 patch_params.geod_th      = true;
 extract_patch_operator('data/train/shapes', 'data/train/disk', patch_params);
